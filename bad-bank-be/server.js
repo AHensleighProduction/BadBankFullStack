@@ -3,9 +3,10 @@ const dotenv = require("dotenv")
 const mongoose= require ("mongoose")
 const cors = require("cors")
 const app = express()
-const port = 5001
-const userRoutes = require("./routes/userRoutes.js")
 dotenv.config()
+const port = process.env.PORT || 5001
+const userRoutes = require("./routes/userRoutes.js")
+
 
 app.use(express.json())
 app.use(cors())
@@ -22,5 +23,5 @@ app.get('/', (req, res) => {
 app.use("/users", userRoutes)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`badBank app listening on port ${port}`)
 })
