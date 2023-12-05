@@ -1,0 +1,16 @@
+#home{
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 50px); 
+    /* background-size: contain;
+    background-image: url('/homebg.png');
+    background-repeat: no-repeat;
+    background-position: center center; */
+    color: black;
+    font-family: Arial, sans-serif;
+  
+}
+#home img{
+    width: 100%;
+
+}

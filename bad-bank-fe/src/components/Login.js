@@ -54,7 +54,8 @@ function Login({setCurrentUser}){
   
     return (
       <Card
-      bgcolor="primary"
+      bgcolor="white"
+      txtcolor= "black"
       header="Log In"
       status={status}
       body={show ? (  

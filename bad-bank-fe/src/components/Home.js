@@ -1,13 +1,14 @@
-import Card from "./Card"
-function Home(){
-    return (
-      <Card
-        txtcolor="black"
-        header="BadBank Landing Module"
-        title="Welcome to the bank"
-        text="You can move around using the navigation bar."
-        body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
-      />    
-    );  
-  }
-  export default Home
+import React from 'react';
+import "./home.css"
+import logo from "../images/homebg.png"
+
+function Home() {
+
+  return (
+    <div id = "home"  > 
+    <img src = {logo}/> 
+    </div>
+  );
+}
+
+export default Home;

@@ -53,7 +53,7 @@ function Withdraw({setCurrentUser}){
       }
       return (
         <Card
-        bgcolor="primary"
+        bgcolor="white"
         header="withdraw"
         status={status}
         body={show ? (  

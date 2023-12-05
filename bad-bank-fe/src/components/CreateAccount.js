@@ -55,7 +55,7 @@ function CreateAccount({setCurrentUser}){
   
     return (
       <Card
-        bgcolor="primary"
+        bgcolor="white"
         header="Create Account"
         status={status}
         body={show ? (  

@@ -39,7 +39,7 @@ function Deposit({setCurrentUser}){
   
     return (
       <Card
-      bgcolor="primary"
+      bgcolor="white"
       header="Deposit"
       status={status}
       body={show ? (  

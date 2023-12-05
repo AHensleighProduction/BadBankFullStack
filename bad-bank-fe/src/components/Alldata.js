@@ -27,8 +27,8 @@ function AllData(){
     getUsers()
   }, [])
     return (
-      <>
-      <h5>All Data in Store</h5>
+      <div>
+      <h5 style = {{color:"white"}}>All Data in Store</h5>
       <table>
         <thead>
           <tr>
@@ -49,7 +49,7 @@ function AllData(){
           })}
         </tbody>
       </table>
-      </>
+      </div>
     );
   }
   export default AllData

@@ -1,0 +1,8 @@
+.navbar{
+    height: 50px
+}
+
+#nav-flex{
+    display: flex !important;
+    justify-content: space-between !important;
+}

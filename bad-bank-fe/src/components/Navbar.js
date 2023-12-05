@@ -1,4 +1,7 @@
 import { Link , useNavigate } from "react-router-dom";
+import "./navbar.css"
+import logo from "../images/homebg.png"
+
 function Navbar({ currentUser, setCurrentUser }) {
   const navigate = useNavigate()
   const handleLogout= () =>{
@@ -10,7 +13,7 @@ function Navbar({ currentUser, setCurrentUser }) {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
-          BadBank
+          <img src = {logo} style = {{height:"40px"}}/>
         </Link>
         <button
           className="navbar-toggler"
@@ -24,7 +27,7 @@ function Navbar({ currentUser, setCurrentUser }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav" id = "nav-flex">
             {!currentUser ? (
               <>
                 <li className="nav-item">
@@ -40,6 +43,7 @@ function Navbar({ currentUser, setCurrentUser }) {
               </>
             ) : (
               <>
+              <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/deposit/">
                     Deposit
@@ -51,6 +55,15 @@ function Navbar({ currentUser, setCurrentUser }) {
                   </Link>
                 </li>
 
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/all-data/">
+                    AllData
+                  </Link>
+                </li>
+                </>
+
+                <>
                 <li className="nav-item">
                   <span onClick = {handleLogout} className="nav-link">Log Out</span>
                 </li>
@@ -58,12 +71,7 @@ function Navbar({ currentUser, setCurrentUser }) {
                 <li className="nav-item">
                   <span className="nav-link">{currentUser.name}</span>
                 </li>
-
-                <li className="nav-item">
-                  <Link className="nav-link" to="/all-data/">
-                    AllData
-                  </Link>
-                </li>
+                </>
               </>
             )}
           </ul>
