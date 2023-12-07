@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from "react";
-
+import React, {useState, useEffect, useContext} from "react";
+import { UserContext } from "../context";
 import {url } from "../App"
 
 function AllData(){
-
+const {loggedInUser} = useContext(UserContext)
   const [users , setUsers] = useState([])
 
   useEffect(()=>{
     async function getUsers(){
       try {
-        const response = await fetch(`${url}/users/`, {
-          method: "get" , 
+        const response = await fetch(`${url}/users/admin`, {
+          method: "post" , 
           mode:"cors",
           headers:{
             "Content-Type": "application/json"
           } ,
+          body: JSON.stringify({isAdmin: loggedInUser.isAdmin})
           
         })
         const data = await response.json()

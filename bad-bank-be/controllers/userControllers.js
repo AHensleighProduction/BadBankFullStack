@@ -27,8 +27,20 @@ const transaction = async (req, res)=> {
 }
 
 const getallUsers = async (req , res) => {
-    const users = await User.find()
-    res.json(users)
+    try {
+        if(req.body.isAdmin){
+            const users = await User.find()
+            res.json(users)
+            return
+        
+        }
+        res.json({message:"you are not admin"})
+        
+    } catch (error) {
+        res.json({message:"you are not admin"})
+        
+    }
+    
 }
 
 module.exports = {createUser, loginUser,transaction, getallUsers}

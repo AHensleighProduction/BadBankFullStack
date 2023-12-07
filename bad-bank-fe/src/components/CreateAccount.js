@@ -9,6 +9,7 @@ function CreateAccount({setCurrentUser}){
     const [name, setName]         = React.useState('');
     const [email, setEmail]       = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [isAdmin, setIsAdmin] = React.useState(false);
     const ctx = React.useContext(UserContext);  
    
   
@@ -34,7 +35,7 @@ function CreateAccount({setCurrentUser}){
           headers:{
             "Content-Type": "application/json"
           } ,
-          body: JSON.stringify({email, password, name})
+          body: JSON.stringify({email, password, name, isAdmin})
         })
         const data = await response.json()
         console.log(data)
@@ -66,7 +67,9 @@ function CreateAccount({setCurrentUser}){
                 <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
                 Password<br/>
                 <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+               <input type="checkbox" className="form-check-input" id="isAdmin" style= {{marginLeft:"20px"}} checked={isAdmin} onChange={()=>setIsAdmin(!isAdmin)} />
+                <label className="form-check-label"style= {{marginLeft:"40px"}} htmlFor="isAdmin">I am an Admin</label><br/>
+                <button type="submit" className="btn btn-light" style= {{marginTop:"20px"}} onClick={handleCreate}>Create Account</button>
                 </>
               ):(
                 <>

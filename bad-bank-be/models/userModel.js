@@ -19,6 +19,11 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 100, // Set a default balance value if not provided
   },
+
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 // Create and export the User model
