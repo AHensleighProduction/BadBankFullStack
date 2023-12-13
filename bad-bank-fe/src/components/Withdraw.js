@@ -18,9 +18,21 @@ function Withdraw({setCurrentUser}){
       }
   
       async function handleWithdraw(){
-    console.log("clicked")
-    console.log("balance",ctx.loggedInUser.balance)
-    console.log("amount", amount)
+        if (!amount) {
+          setStatus('Error: Please enter an amount');
+          setTimeout(() => setStatus(''),3000);
+          return;
+        }
+        if (isNaN(amount)) {
+          setStatus('Error: Please enter a numerical value');
+          setTimeout(() => setStatus(''),3000);
+          return;
+        }
+        if (Number(amount)<0) {
+          setStatus('Error: Please enter a positive amount');
+          setTimeout(() => setStatus(''),3000);
+          return;
+        }
   // check if the balance is greater than withdraw amount
   if(ctx.loggedInUser.balance >= Number(amount)){
     try {

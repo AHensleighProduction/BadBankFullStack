@@ -34,13 +34,18 @@ function Login({setCurrentUser}){
         body: JSON.stringify({email, password})
       })
       const data = await response.json()
+      if(response.status !== 200){
+        throw new Error(data.message)
+      }
       console.log(data)
       setCurrentUser(data)
       setShow(false)
       localStorage.setItem("bank User" , JSON.stringify(data))
       
     } catch (error) {
-      
+      console.log(error)
+      setStatus(error.message)
+      setTimeout(() => setStatus(''),3000);
     }
 
   }    

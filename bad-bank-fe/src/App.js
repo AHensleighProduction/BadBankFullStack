@@ -10,8 +10,7 @@ import Deposit from "./components/Deposit";
 import Withdraw from "./components/Withdraw";
 import AllData from "./components/Alldata";
 import { useEffect, useState } from "react";
-// export const url = "http://localhost:5001"
-export const url = "https://bad-bank-full-stack.onrender.com"
+export const url = process.env.REACT_APP_URL || "http://localhost:5001"
 function App() {
   const [currentUser , setCurrentUser] = useState(null)
 

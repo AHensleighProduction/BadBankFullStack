@@ -11,7 +11,7 @@ const loginUser =async (req , res)=>{
     const user = await User.findOne({email:req.body.email})
     //if user doesn't exist send response
     if(user.password!== req.body.password){
-        res.json({message:"invalid Password"})
+        res.status(403).json({message:"Invalid Password"})
         return
     }
     //if needed create token and send with response

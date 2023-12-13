@@ -15,6 +15,21 @@ function Deposit({setCurrentUser}){
       setAmount(0)
     }
   async function handleDeposit(){
+    if (!amount) {
+      setStatus('Error: Please enter an amount');
+      setTimeout(() => setStatus(''),3000);
+      return;
+    }
+    if (isNaN(amount)) {
+      setStatus('Error: Please enter a numerical value');
+      setTimeout(() => setStatus(''),3000);
+      return;
+    }
+    if (Number(amount)<0) {
+      setStatus('Error: Please enter a positive amount');
+      setTimeout(() => setStatus(''),3000);
+      return;
+    }
   //update the user's bal in ctx.users
     //loop through the array of users
     try {
@@ -44,7 +59,7 @@ function Deposit({setCurrentUser}){
       status={status}
       body={show ? (  
               <>
-            { ctx.loggedInUser && <h3>current Balance: {ctx.loggedInUser.balance} </h3>}
+            { ctx.loggedInUser && <h3>Current Balance: {ctx.loggedInUser.balance} </h3>}
              
               Amount<br/>
               <input type="text" className="form-control" id="amount" placeholder="Enter amount" value={amount} onChange={e => setAmount(e.currentTarget.value)}/><br/>

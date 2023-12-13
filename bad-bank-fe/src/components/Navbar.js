@@ -13,7 +13,7 @@ function Navbar({ currentUser, setCurrentUser }) {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
-          <img src={logo} style={{ height: "40px" }} alt= "bankLogo"/>
+        <img src = {`${process.env.PUBLIC_URL}/bank.png`} style = {{height:"40px"}}/>
         </Link>
         <button
           className="navbar-toggler"
