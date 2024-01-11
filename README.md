@@ -8,6 +8,20 @@ This project contains a full stack banking app. Users can create an account, dep
 - Add different accounts (checking, savings).
 - Introduce an extra level of authentication.
 
+
+## API Documentation 
+
+| METHOD | ENDPOINT                            | Description                   | 
+| ------ | ----------------------------------- | ----------------------------- | 
+| POST   | /users                              | Create an account             |
+| POST   | /users/login                        | Log into an existing account  |
+| PUT    | /users/id                           | Handle Transactions           | 
+| POST   | /users/admin                        | Get all Users                 | 
+
+
+
+
+
 ## How to Run
 
 ### Terminal Scripts
