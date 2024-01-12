@@ -14,9 +14,9 @@ This project contains a full stack banking app. Users can create an account, dep
 | METHOD | ENDPOINT                            | Description                   | 
 | ------ | ----------------------------------- | ----------------------------- | 
 | POST   | /users                              | Create an account             |
-| POST   | /users/login                        | Log into an existing account  |
+| GET    | /users/login                        | Log into an existing account  |
 | PUT    | /users/id                           | Handle Transactions           | 
-| POST   | /users/admin                        | Get all Users                 | 
+| Get    | /users/admin                        | Get all Users                 | 
 
 
 
